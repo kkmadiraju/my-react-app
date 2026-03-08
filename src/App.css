@@ -5,6 +5,50 @@
   text-align: center;
 }
 
+.app-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.app-menu {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.menu-item {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.menu-item.active {
+  background: #646cff;
+  color: #fff;
+  border-color: #646cff;
+}
+
+.sum-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sum-form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.sum-form input {
+  width: 220px;
+  padding: 0.55rem;
+  border-radius: 0.5rem;
+  border: 1px solid #646cff;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
