@@ -3,11 +3,34 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+type OperationPage = 'home' | 'add' | 'subtract' | 'multiply'
+
+const operationConfig = {
+  add: {
+    heading: 'Add',
+    resultLabel: 'Sum',
+    description: 'Enter two numbers and click submit to calculate the sum.',
+    calculate: (first: number, second: number) => first + second,
+  },
+  subtract: {
+    heading: 'Subtract',
+    resultLabel: 'Difference',
+    description: 'Enter two numbers and click submit to calculate the difference.',
+    calculate: (first: number, second: number) => first - second,
+  },
+  multiply: {
+    heading: 'Multiply',
+    resultLabel: 'Product',
+    description: 'Enter two numbers and click submit to calculate the product.',
+    calculate: (first: number, second: number) => first * second,
+  },
+} as const
+
 function App() {
-  const [activePage, setActivePage] = useState<'home' | 'calculator'>('calculator')
+  const [activePage, setActivePage] = useState<OperationPage>('add')
   const [first, setFirst] = useState('')
   const [second, setSecond] = useState('')
-  const [sum, setSum] = useState<number | null>(null)
+  const [result, setResult] = useState<number | null>(null)
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -15,12 +38,19 @@ function App() {
     const secondValue = Number(second)
 
     if (Number.isNaN(firstValue) || Number.isNaN(secondValue)) {
-      setSum(null)
+      setResult(null)
       return
     }
 
-    setSum(firstValue + secondValue)
+    if (activePage === 'home') {
+      setResult(null)
+      return
+    }
+
+    setResult(operationConfig[activePage].calculate(firstValue, secondValue))
   }
+
+  const activeOperation = activePage === 'home' ? null : operationConfig[activePage]
 
   return (
     <div className="app-page">
@@ -28,16 +58,42 @@ function App() {
         <button
           type="button"
           className={`menu-item ${activePage === 'home' ? 'active' : ''}`}
-          onClick={() => setActivePage('home')}
+          onClick={() => {
+            setActivePage('home')
+            setResult(null)
+          }}
         >
           Home
         </button>
         <button
           type="button"
-          className={`menu-item ${activePage === 'calculator' ? 'active' : ''}`}
-          onClick={() => setActivePage('calculator')}
+          className={`menu-item ${activePage === 'add' ? 'active' : ''}`}
+          onClick={() => {
+            setActivePage('add')
+            setResult(null)
+          }}
         >
-          Sum Calculator
+          Add
+        </button>
+        <button
+          type="button"
+          className={`menu-item ${activePage === 'subtract' ? 'active' : ''}`}
+          onClick={() => {
+            setActivePage('subtract')
+            setResult(null)
+          }}
+        >
+          Subtract
+        </button>
+        <button
+          type="button"
+          className={`menu-item ${activePage === 'multiply' ? 'active' : ''}`}
+          onClick={() => {
+            setActivePage('multiply')
+            setResult(null)
+          }}
+        >
+          Multiply
         </button>
       </div>
       <main>
@@ -52,16 +108,16 @@ function App() {
           <>
             <h1>Welcome</h1>
             <p className="read-the-docs">
-              Use the menu above to open the Sum Calculator.
+              Use the menu above to open Add, Subtract, or Multiply.
             </p>
           </>
         )}
 
-        {activePage === 'calculator' && (
+        {activeOperation !== null && (
           <>
-            <h1>Sum Calculator</h1>
+            <h1>{activeOperation.heading}</h1>
             <div className="card">
-              <form onSubmit={onSubmit} className="sum-form">
+              <form onSubmit={onSubmit} className="operation-form">
                 <div>
                   <label htmlFor="first-number">First Number</label>
                   <input
@@ -84,11 +140,9 @@ function App() {
                 </div>
                 <button type="submit">Submit</button>
               </form>
-              {sum !== null && <p>Sum: {sum}</p>}
+              {result !== null && <p>{activeOperation.resultLabel}: {result}</p>}
             </div>
-            <p className="read-the-docs">
-              Enter two numbers and click submit to calculate the sum.
-            </p>
+            <p className="read-the-docs">{activeOperation.description}</p>
           </>
         )}
       </main>
