@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react'
 import './App.css'
 
 type Operation = 'add' | 'subtract' | 'multiply' | 'divide'
+type ActiveMenu = 'operations' | 'history'
 
 type CalculationResponse = {
   id: number
@@ -34,6 +35,7 @@ function App() {
   const [calculations, setCalculations] = useState<CalculationResponse[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isLoadingOperations, setIsLoadingOperations] = useState(false)
+  const [activeMenu, setActiveMenu] = useState<ActiveMenu>('operations')
 
   const apiBaseUrl = import.meta.env.VITE_CALC_API_URL || 'http://localhost:8080'
 
@@ -110,109 +112,133 @@ function App() {
 
   return (
     <main className="app">
-      <section className="calculator-card">
-        <h1>Operations</h1>
-        <p className="subtitle">Perform add, subtract, multiply, and divide, and save every operation.</p>
+      <nav className="main-menu" aria-label="App menu">
+        <button
+          type="button"
+          className={activeMenu === 'operations' ? 'menu-item active' : 'menu-item'}
+          onClick={() => setActiveMenu('operations')}
+        >
+          Operations
+        </button>
+        <button
+          type="button"
+          className={activeMenu === 'history' ? 'menu-item active' : 'menu-item'}
+          onClick={() => setActiveMenu('history')}
+        >
+          Operations History
+        </button>
+      </nav>
 
-        <form className="operation-form" onSubmit={handleSubmit}>
-          <div className="field">
-            <label htmlFor="operation">Operation</label>
-            <select
-              id="operation"
-              value={operation}
-              onChange={(event) => setOperation(event.target.value as Operation)}
+      {activeMenu === 'operations' ? (
+        <section className="calculator-card">
+          <h1>Operations</h1>
+          <p className="subtitle">
+            Perform add, subtract, multiply, and divide, and save every operation.
+          </p>
+
+          <form className="operation-form" onSubmit={handleSubmit}>
+            <div className="field">
+              <label htmlFor="operation">Operation</label>
+              <details className="operation-menu" id="operation">
+                <summary>Operations: {operationTitleMap[operation]}</summary>
+                <div className="operation-menu-panel">
+                  {operationOptions.map((item) => (
+                    <button
+                      key={item.value}
+                      type="button"
+                      onClick={() => setOperation(item.value)}
+                      className={operation === item.value ? 'selected' : ''}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </details>
+            </div>
+
+            <div className="field">
+              <label htmlFor="first-number">First Number</label>
+              <input
+                id="first-number"
+                inputMode="decimal"
+                type="number"
+                step="any"
+                value={firstNumber}
+                onChange={(event) => setFirstNumber(event.target.value)}
+                required
+              />
+            </div>
+
+            <div className="field">
+              <label htmlFor="second-number">Second Number</label>
+              <input
+                id="second-number"
+                inputMode="decimal"
+                type="number"
+                step="any"
+                value={secondNumber}
+                onChange={(event) => setSecondNumber(event.target.value)}
+                required
+              />
+            </div>
+
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Submit'}
+            </button>
+          </form>
+
+          <div className="result-box" role="status">
+            <strong>Result ({operationTitleMap[operation]}):</strong> {result === null ? '—' : formatNumber(result)}
+          </div>
+        </section>
+      ) : (
+        <section className="operations-table">
+          <div className="table-header">
+            <h2>Operations History</h2>
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={() => loadCalculations()}
+              disabled={isLoadingOperations || isSubmitting}
             >
-              {operationOptions.map((item) => (
-                <option key={item.value} value={item.value}>
-                  {item.label}
-                </option>
-              ))}
-            </select>
+              Refresh
+            </button>
           </div>
 
-          <div className="field">
-            <label htmlFor="first-number">First Number</label>
-            <input
-              id="first-number"
-              inputMode="decimal"
-              type="number"
-              step="any"
-              value={firstNumber}
-              onChange={(event) => setFirstNumber(event.target.value)}
-              required
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="second-number">Second Number</label>
-            <input
-              id="second-number"
-              inputMode="decimal"
-              type="number"
-              step="any"
-              value={secondNumber}
-              onChange={(event) => setSecondNumber(event.target.value)}
-              required
-            />
-          </div>
-
-          <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Submitting...' : 'Submit'}
-          </button>
-        </form>
-
-        <div className="result-box" role="status">
-          <strong>Result ({operationTitleMap[operation]}):</strong>{' '}
-          {result === null ? '—' : formatNumber(result)}
-        </div>
-      </section>
-
-      <section className="operations-table">
-        <div className="table-header">
-          <h2>Operations History</h2>
-          <button
-            type="button"
-            className="secondary-button"
-            onClick={() => loadCalculations()}
-            disabled={isLoadingOperations || isSubmitting}
-          >
-            Refresh
-          </button>
-        </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>First Number</th>
-              <th>Second Number</th>
-              <th>Operand</th>
-              <th>Result</th>
-            </tr>
-          </thead>
-          <tbody>
-            {isLoadingOperations ? (
+          <table>
+            <thead>
               <tr>
-                <td colSpan={5}>Loading operations...</td>
+                <th>Id</th>
+                <th>First Number</th>
+                <th>Second Number</th>
+                <th>Operand</th>
+                <th>Result</th>
               </tr>
-            ) : calculations.length === 0 ? (
-              <tr>
-                <td colSpan={5}>No operations yet.</td>
-              </tr>
-            ) : (
-              calculations.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{formatNumber(item.firstNumber)}</td>
-                  <td>{formatNumber(item.secondNumber)}</td>
-                  <td>{item.operation}</td>
-                  <td>{formatNumber(item.result)}</td>
+            </thead>
+            <tbody>
+              {isLoadingOperations ? (
+                <tr>
+                  <td colSpan={5}>Loading operations...</td>
                 </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </section>
+              ) : calculations.length === 0 ? (
+                <tr>
+                  <td colSpan={5}>No operations yet.</td>
+                </tr>
+              ) : (
+                calculations.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.id}</td>
+                    <td>{formatNumber(item.firstNumber)}</td>
+                    <td>{formatNumber(item.secondNumber)}</td>
+                    <td>{item.operation}</td>
+                    <td>{formatNumber(item.result)}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </section>
+      )}
 
       {error && <p role="alert" className="error">Error: {error}</p>}
     </main>

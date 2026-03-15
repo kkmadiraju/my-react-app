@@ -20,6 +20,24 @@ h2 {
   margin: 0 0 0.8rem;
 }
 
+.main-menu {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  background: #f4f6fb;
+  color: #233876;
+  border: 1px solid #cfd7f0;
+}
+
+.menu-item.active {
+  background: #2a4df4;
+  color: #fff;
+  border-color: #2a4df4;
+}
+
 .subtitle {
   margin: 0 0 1rem;
   color: #3c4554;
@@ -48,12 +66,61 @@ label {
 }
 
 select,
+details.operation-menu,
 input {
   height: 2.4rem;
   border-radius: 8px;
   border: 1px solid #c8cfdd;
   padding: 0 0.75rem;
   font-size: 1rem;
+}
+
+details.operation-menu {
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+  line-height: 2.4rem;
+}
+
+details.operation-menu summary {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  list-style: none;
+  color: #1d2433;
+}
+
+details.operation-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.operation-menu-panel {
+  position: absolute;
+  top: 2.6rem;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #c8cfdd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgb(20 24 31 / 12%);
+}
+
+.operation-menu-panel button {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  color: #1f2a44;
+  background: #fff;
+  padding: 0.6rem 0.8rem;
+}
+
+.operation-menu-panel button:hover,
+.operation-menu-panel button.selected {
+  background: #eef2ff;
 }
 
 button {
