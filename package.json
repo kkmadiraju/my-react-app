@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-backend": "mvn -f backend/pom.xml clean package",
+    "rebuild-all": "npm run build && npm run build-backend",
+    "run-backend-h2": "mvn -f backend/pom.xml spring-boot:run -Dspring-boot.run.profiles=h2",
+    "run-backend-sql": "mvn -f backend/pom.xml spring-boot:run -Dspring-boot.run.profiles=sql",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest"

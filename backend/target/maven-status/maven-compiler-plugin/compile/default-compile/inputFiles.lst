@@ -1,0 +1,10 @@
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\CalculatorServiceApplication.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\config\DatabaseSchemaInitializer.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\controller\CalculationController.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\dto\CalculationRequest.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\dto\CalculationResponse.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\exception\ResourceNotFoundException.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\model\Calculation.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\model\OperationType.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\repository\CalculationRepository.java
+G:\ReactProjects\ReactProjects\my-react-app\backend\src\main\java\com\example\calculator\service\CalculationService.java

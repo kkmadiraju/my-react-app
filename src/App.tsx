@@ -1,152 +1,221 @@
-import { type FormEvent, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { FormEvent, useEffect, useState } from 'react'
 import './App.css'
 
-type OperationPage = 'home' | 'add' | 'subtract' | 'multiply'
+type Operation = 'add' | 'subtract' | 'multiply' | 'divide'
 
-const operationConfig = {
-  add: {
-    heading: 'Add',
-    resultLabel: 'Sum',
-    description: 'Enter two numbers and click submit to calculate the sum.',
-    calculate: (first: number, second: number) => first + second,
-  },
-  subtract: {
-    heading: 'Subtract',
-    resultLabel: 'Difference',
-    description: 'Enter two numbers and click submit to calculate the difference.',
-    calculate: (first: number, second: number) => first - second,
-  },
-  multiply: {
-    heading: 'Multiply',
-    resultLabel: 'Product',
-    description: 'Enter two numbers and click submit to calculate the product.',
-    calculate: (first: number, second: number) => first * second,
-  },
-} as const
+type CalculationResponse = {
+  id: number
+  result: number
+  firstNumber: number
+  secondNumber: number
+  operation: string
+}
+
+const operationOptions: { value: Operation; label: string }[] = [
+  { value: 'add', label: 'Add' },
+  { value: 'subtract', label: 'Subtract' },
+  { value: 'multiply', label: 'Multiply' },
+  { value: 'divide', label: 'Divide' },
+]
+
+const operationTitleMap: Record<Operation, string> = {
+  add: 'Add',
+  subtract: 'Subtract',
+  multiply: 'Multiply',
+  divide: 'Divide',
+}
 
 function App() {
-  const [activePage, setActivePage] = useState<OperationPage>('add')
-  const [first, setFirst] = useState('')
-  const [second, setSecond] = useState('')
+  const [operation, setOperation] = useState<Operation>('add')
+  const [firstNumber, setFirstNumber] = useState('')
+  const [secondNumber, setSecondNumber] = useState('')
   const [result, setResult] = useState<number | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [calculations, setCalculations] = useState<CalculationResponse[]>([])
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isLoadingOperations, setIsLoadingOperations] = useState(false)
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const firstValue = Number(first)
-    const secondValue = Number(second)
+  const apiBaseUrl = import.meta.env.VITE_CALC_API_URL || 'http://localhost:8080'
 
-    if (Number.isNaN(firstValue) || Number.isNaN(secondValue)) {
-      setResult(null)
-      return
+  const loadCalculations = async () => {
+    setIsLoadingOperations(true)
+    setError(null)
+    try {
+      const response = await fetch(`${apiBaseUrl}/api/operations`)
+      if (!response.ok) {
+        throw new Error(`Failed to fetch operations: ${response.status}`)
+      }
+      const data = (await response.json()) as CalculationResponse[]
+      setCalculations(data)
+    } catch (err) {
+      setError((err as Error).message)
+    } finally {
+      setIsLoadingOperations(false)
     }
-
-    if (activePage === 'home') {
-      setResult(null)
-      return
-    }
-
-    setResult(operationConfig[activePage].calculate(firstValue, secondValue))
   }
 
-  const activeOperation = activePage === 'home' ? null : operationConfig[activePage]
+  useEffect(() => {
+    loadCalculations()
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      loadCalculations()
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const formatNumber = (value: number) => {
+    if (Number.isInteger(value)) {
+      return value.toString()
+    }
+    return value.toFixed(6).replace(/\.?0+$/, '')
+  }
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    try {
+      setIsSubmitting(true)
+      setError(null)
+      setResult(null)
+
+      const response = await fetch(`${apiBaseUrl}/api/operations`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstNumber: Number(firstNumber),
+          secondNumber: Number(secondNumber),
+          operation,
+        }),
+      })
+
+      if (!response.ok) {
+        const responseText = await response.text()
+        throw new Error(responseText || `Failed to execute operation: ${response.status}`)
+      }
+
+      const data = (await response.json()) as CalculationResponse
+      setResult(data.result)
+      setFirstNumber('')
+      setSecondNumber('')
+      await loadCalculations()
+    } catch (err) {
+      setError((err as Error).message)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
-    <div className="app-page">
-      <div className="app-menu">
-        <button
-          type="button"
-          className={`menu-item ${activePage === 'home' ? 'active' : ''}`}
-          onClick={() => {
-            setActivePage('home')
-            setResult(null)
-          }}
-        >
-          Home
-        </button>
-        <button
-          type="button"
-          className={`menu-item ${activePage === 'add' ? 'active' : ''}`}
-          onClick={() => {
-            setActivePage('add')
-            setResult(null)
-          }}
-        >
-          Add
-        </button>
-        <button
-          type="button"
-          className={`menu-item ${activePage === 'subtract' ? 'active' : ''}`}
-          onClick={() => {
-            setActivePage('subtract')
-            setResult(null)
-          }}
-        >
-          Subtract
-        </button>
-        <button
-          type="button"
-          className={`menu-item ${activePage === 'multiply' ? 'active' : ''}`}
-          onClick={() => {
-            setActivePage('multiply')
-            setResult(null)
-          }}
-        >
-          Multiply
-        </button>
-      </div>
-      <main>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="app">
+      <section className="calculator-card">
+        <h1>Operations</h1>
+        <p className="subtitle">Perform add, subtract, multiply, and divide, and save every operation.</p>
 
-        {activePage === 'home' && (
-          <>
-            <h1>Welcome</h1>
-            <p className="read-the-docs">
-              Use the menu above to open Add, Subtract, or Multiply.
-            </p>
-          </>
-        )}
+        <form className="operation-form" onSubmit={handleSubmit}>
+          <div className="field">
+            <label htmlFor="operation">Operation</label>
+            <select
+              id="operation"
+              value={operation}
+              onChange={(event) => setOperation(event.target.value as Operation)}
+            >
+              {operationOptions.map((item) => (
+                <option key={item.value} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        {activeOperation !== null && (
-          <>
-            <h1>{activeOperation.heading}</h1>
-            <div className="card">
-              <form onSubmit={onSubmit} className="operation-form">
-                <div>
-                  <label htmlFor="first-number">First Number</label>
-                  <input
-                    id="first-number"
-                    type="number"
-                    value={first}
-                    onChange={(event) => setFirst(event.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="second-number">Second Number</label>
-                  <input
-                    id="second-number"
-                    type="number"
-                    value={second}
-                    onChange={(event) => setSecond(event.target.value)}
-                    required
-                  />
-                </div>
-                <button type="submit">Submit</button>
-              </form>
-              {result !== null && <p>{activeOperation.resultLabel}: {result}</p>}
-            </div>
-            <p className="read-the-docs">{activeOperation.description}</p>
-          </>
-        )}
-      </main>
-    </div>
+          <div className="field">
+            <label htmlFor="first-number">First Number</label>
+            <input
+              id="first-number"
+              inputMode="decimal"
+              type="number"
+              step="any"
+              value={firstNumber}
+              onChange={(event) => setFirstNumber(event.target.value)}
+              required
+            />
+          </div>
+
+          <div className="field">
+            <label htmlFor="second-number">Second Number</label>
+            <input
+              id="second-number"
+              inputMode="decimal"
+              type="number"
+              step="any"
+              value={secondNumber}
+              onChange={(event) => setSecondNumber(event.target.value)}
+              required
+            />
+          </div>
+
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Submit'}
+          </button>
+        </form>
+
+        <div className="result-box" role="status">
+          <strong>Result ({operationTitleMap[operation]}):</strong>{' '}
+          {result === null ? '—' : formatNumber(result)}
+        </div>
+      </section>
+
+      <section className="operations-table">
+        <div className="table-header">
+          <h2>Operations History</h2>
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={() => loadCalculations()}
+            disabled={isLoadingOperations || isSubmitting}
+          >
+            Refresh
+          </button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>First Number</th>
+              <th>Second Number</th>
+              <th>Operand</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            {isLoadingOperations ? (
+              <tr>
+                <td colSpan={5}>Loading operations...</td>
+              </tr>
+            ) : calculations.length === 0 ? (
+              <tr>
+                <td colSpan={5}>No operations yet.</td>
+              </tr>
+            ) : (
+              calculations.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{formatNumber(item.firstNumber)}</td>
+                  <td>{formatNumber(item.secondNumber)}</td>
+                  <td>{item.operation}</td>
+                  <td>{formatNumber(item.result)}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </section>
+
+      {error && <p role="alert" className="error">Error: {error}</p>}
+    </main>
   )
 }
 

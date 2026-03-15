@@ -1,86 +1,111 @@
-#root {
-  max-width: 1280px;
+.app {
+  width: min(960px, 100%);
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.app-page {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1.5rem;
+  padding: 2rem 1rem 2.5rem;
 }
 
-.app-menu {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
+.calculator-card,
+.operations-table {
+  background: rgba(255, 255, 255, 0.93);
+  border: 1px solid #e8ebf0;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgb(31 35 44 / 8%);
+  padding: 1.2rem 1.4rem;
 }
 
-.menu-item {
-  background: #2a2a2a;
-  color: #fff;
+h1,
+h2 {
+  margin: 0 0 0.8rem;
 }
 
-.menu-item.active {
-  background: #646cff;
-  color: #fff;
-  border-color: #646cff;
+.subtitle {
+  margin: 0 0 1rem;
+  color: #3c4554;
 }
 
 .operation-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.table-header {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
   align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
-.operation-form > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
+.field {
+  display: grid;
+  gap: 0.35rem;
 }
 
-.operation-form input {
-  width: 220px;
-  padding: 0.55rem;
-  border-radius: 0.5rem;
-  border: 1px solid #646cff;
+label {
+  font-size: 0.93rem;
+  font-weight: 600;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+select,
+input {
+  height: 2.4rem;
+  border-radius: 8px;
+  border: 1px solid #c8cfdd;
+  padding: 0 0.75rem;
+  font-size: 1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  justify-self: start;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: #2a4df4;
+  color: #fff;
+  border-radius: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.secondary-button {
+  justify-self: auto;
+  background: #eef2ff;
+  color: #233876;
+  border: 1px solid #aab7e8;
 }
 
-.card {
-  padding: 2em;
+button:disabled {
+  opacity: 0.6;
 }
 
-.read-the-docs {
-  color: #888;
+.result-box {
+  margin-top: 1rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid #dee3f0;
+  border-radius: 8px;
+  background: #f6f8ff;
+  font-size: 1.05rem;
+}
+
+.operations-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.operations-table th,
+.operations-table td {
+  border-bottom: 1px solid #edf0f7;
+  padding: 0.6rem 0.45rem;
+  text-align: left;
+}
+
+.operations-table th {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #344054;
+  text-transform: uppercase;
+}
+
+.error {
+  margin-top: 0.6rem;
+  color: #a01818;
+  font-weight: 600;
 }
