@@ -20,6 +20,10 @@ h2 {
   margin: 0 0 0.8rem;
 }
 
+h3 {
+  margin: 0 0 0.8rem;
+}
+
 .main-menu {
   display: flex;
   gap: 0.6rem;
@@ -36,6 +40,27 @@ h2 {
   background: #2a4df4;
   color: #fff;
   border-color: #2a4df4;
+}
+
+.http-submenu {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.http-operations {
+  gap: 1rem;
+}
+
+.http-method-panel {
+  margin-top: 1rem;
+}
+
+.http-message {
+  margin: 0.8rem 0 0;
+  color: #24304f;
+  font-weight: 600;
 }
 
 .subtitle {
