@@ -4,10 +4,10 @@ cd /d "%~dp0"
 
 call :LoadEnv
 if not defined SQLSERVER_USE_WINDOWS_AUTH (
-  set "SQLSERVER_USE_WINDOWS_AUTH=true"
+  set "SQLSERVER_USE_WINDOWS_AUTH=false"
 )
 if not defined SQLSERVER_URL (
-  set "SQLSERVER_URL=jdbc:sqlserver://DESKTOP-VKNSMP5:1433;databaseName=calculator_db;integratedSecurity=true;trustServerCertificate=true;encrypt=true"
+  set "SQLSERVER_URL=jdbc:sqlserver://DESKTOP-VKNSMP5:1433;databaseName=calculator_db;trustServerCertificate=true;encrypt=true"
 )
 
 if /I "%SQLSERVER_USE_WINDOWS_AUTH%"=="true" (
