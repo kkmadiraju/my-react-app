@@ -1,0 +1,20 @@
+flowchart TB
+  User["User Browser"] --> FE["React Frontend\nVite dev server"]
+  FE -->|HTTP JSON\nVITE_CALC_API_URL| API["Spring Boot REST API\n/api/operations\nServer port 8080"]
+
+  subgraph Frontend
+    FE --> FE_OPS["Operations\nPOST /api/operations"]
+    FE --> FE_LIST["History / Polling\nGET /api/operations"]
+    FE --> FE_HTTP["HTTP Operations Sandbox\nGET|POST|PUT|DELETE"]
+  end
+
+  API --> CTRL["CalculationController\n@RequestMapping /api/operations"]
+  CTRL --> SVC["CalculationService\ncompute + validation"]
+  SVC --> REPO["CalculationRepository\nJpaRepository"]
+  REPO --> DB[("MS SQL Server\noperations table")]
+
+  SVC --> E1["Business rules\nadd/sub/mul/div\nCannot divide by zero"]
+  E1 --> REPO
+  CTRL --> ERR["Exception handling\n404 Not Found, 400 Bad Request"]
+  ERR --> FE
+  DB --> REPO
