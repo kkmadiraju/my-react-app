@@ -69,6 +69,12 @@ public class CalculationService {
                 }
                 yield request.getFirstNumber() / request.getSecondNumber();
             }
+            case MOD -> {
+                if (request.getSecondNumber() == 0d) {
+                    throw new IllegalArgumentException("Cannot mod by zero");
+                }
+                yield request.getFirstNumber() % request.getSecondNumber();
+            }
         };
 
         return new Calculation(request.getFirstNumber(), request.getSecondNumber(), operation, result);

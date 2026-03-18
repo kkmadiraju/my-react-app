@@ -22,6 +22,23 @@ test('submits an operation from the calculator form', async ({ page }) => {
   await expect(page.locator('.operations-table tbody tr').first()).toContainText('add')
 })
 
+test('supports mod from the calculator form', async ({ page }) => {
+  await installMockOperationsApi(page, seedOperations)
+  await page.goto('/')
+
+  await page.getByText('Operation: Add').click()
+  await page.getByRole('button', { name: 'Mod' }).click()
+  await page.getByLabel('First Number').fill('14')
+  await page.getByLabel('Second Number').fill('4')
+  await page.getByRole('button', { name: 'Submit' }).click()
+
+  await expect(page.locator('.calculator-card .result-box')).toContainText('2')
+
+  await page.getByRole('button', { name: 'Operations History' }).click()
+  await expect(page.locator('.operations-table tbody tr').first()).toContainText('mod')
+  await expect(page.locator('.operations-table tbody tr').first()).toContainText('2')
+})
+
 test('sorts the operations history grid by result', async ({ page }) => {
   await installMockOperationsApi(page, seedOperations)
   await page.goto('/')

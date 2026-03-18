@@ -1,7 +1,7 @@
-import { FormEvent, useEffect, useState } from 'react'
+import { FormEvent, MouseEvent, useEffect, useState } from 'react'
 import './App.css'
 
-type Operation = 'add' | 'subtract' | 'multiply' | 'divide'
+type Operation = 'add' | 'subtract' | 'multiply' | 'divide' | 'mod'
 type ActiveMenu = 'operations' | 'history' | 'http'
 type HttpMode = 'getAll' | 'getById' | 'create' | 'update' | 'delete'
 type SortDirection = 'asc' | 'desc'
@@ -24,6 +24,7 @@ const operationOptions: { value: Operation; label: string }[] = [
   { value: 'subtract', label: 'Subtract' },
   { value: 'multiply', label: 'Multiply' },
   { value: 'divide', label: 'Divide' },
+  { value: 'mod', label: 'Mod' },
 ]
 
 const operationTitleMap: Record<Operation, string> = {
@@ -31,6 +32,7 @@ const operationTitleMap: Record<Operation, string> = {
   subtract: 'Subtract',
   multiply: 'Multiply',
   divide: 'Divide',
+  mod: 'Mod',
 }
 
 function App() {
@@ -180,7 +182,10 @@ function App() {
           <button
             key={item.value}
             type="button"
-            onClick={() => onChange(item.value)}
+            onClick={(event: MouseEvent<HTMLButtonElement>) => {
+              onChange(item.value)
+              event.currentTarget.closest('details')?.removeAttribute('open')
+            }}
             className={selectedOperation === item.value ? 'selected' : ''}
           >
             {item.label}
@@ -410,7 +415,7 @@ function App() {
         <section className="calculator-card">
           <h1>Operations</h1>
           <p className="subtitle">
-            Perform add, subtract, multiply, and divide, and save every operation.
+            Perform add, subtract, multiply, divide, and mod, and save every operation.
           </p>
 
           <form className="operation-form" onSubmit={handleSubmit}>

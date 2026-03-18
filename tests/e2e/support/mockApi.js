@@ -95,6 +95,11 @@ function calculateResult(firstNumber, secondNumber, operation) {
         throw new Error('Cannot divide by zero')
       }
       return firstNumber / secondNumber
+    case 'mod':
+      if (secondNumber === 0) {
+        throw new Error('Cannot mod by zero')
+      }
+      return firstNumber % secondNumber
     default:
       throw new Error(`Unsupported operation: ${operation}`)
   }

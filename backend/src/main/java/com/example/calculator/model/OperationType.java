@@ -4,7 +4,8 @@ public enum OperationType {
     ADD("add"),
     SUBTRACT("subtract"),
     MULTIPLY("multiply"),
-    DIVIDE("divide");
+    DIVIDE("divide"),
+    MOD("mod");
 
     private final String value;
 
