@@ -62,7 +62,8 @@ flowchart TB
 ### Build and run path
 
 - Backend:
-  - `backend/pom.xml`
+  - `backend/build.gradle`
+  - `backend/settings.gradle`
   - Spring Boot app at `backend/src/main/java/com/example/calculator/...`
 - Frontend:
   - Vite app at repo root

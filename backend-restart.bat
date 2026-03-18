@@ -39,15 +39,15 @@ echo Restarting backend...
 call :KillPortOwner 8080
 
 echo Building backend...
-call mvn -f backend/pom.xml clean package
+call backend\gradlew.bat -p backend clean bootJar
 if %errorlevel% neq 0 (
   echo Backend build failed.
   exit /b %errorlevel%
 )
 
-for %%J in (backend\target\*.jar) do set "APP_JAR=%%~fJ"
+for %%J in (backend\build\libs\*.jar) do set "APP_JAR=%%~fJ"
 if not defined APP_JAR (
-  echo Backend jar not found in backend\target.
+  echo Backend jar not found in backend\build\libs.
   exit /b 1
 )
 

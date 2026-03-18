@@ -4,6 +4,12 @@ import './App.css'
 type Operation = 'add' | 'subtract' | 'multiply' | 'divide'
 type ActiveMenu = 'operations' | 'history' | 'http'
 type HttpMode = 'getAll' | 'getById' | 'create' | 'update' | 'delete'
+type SortDirection = 'asc' | 'desc'
+type SortKey = 'id' | 'firstNumber' | 'secondNumber' | 'operation' | 'result'
+type SortConfig = {
+  key: SortKey
+  direction: SortDirection
+}
 
 type CalculationResponse = {
   id: number
@@ -39,6 +45,10 @@ function App() {
   const [activeMenu, setActiveMenu] = useState<ActiveMenu>('operations')
   const [activeHttpMode, setActiveHttpMode] = useState<HttpMode>('getAll')
   const [isHttpSubmitting, setIsHttpSubmitting] = useState(false)
+  const [historySort, setHistorySort] = useState<SortConfig>({
+    key: 'id',
+    direction: 'desc',
+  })
 
   const [httpItems, setHttpItems] = useState<CalculationResponse[]>([])
   const [httpItem, setHttpItem] = useState<CalculationResponse | null>(null)
@@ -96,6 +106,68 @@ function App() {
   const formatOperationLabel = (value: Operation) => {
     return operationTitleMap[value]
   }
+
+  const getSortLabel = (key: SortKey) => {
+    if (historySort.key !== key) {
+      return 'none'
+    }
+
+    return historySort.direction === 'asc' ? 'ascending' : 'descending'
+  }
+
+  const handleHistorySort = (key: SortKey) => {
+    setHistorySort((currentSort) => {
+      if (currentSort.key === key) {
+        return {
+          key,
+          direction: currentSort.direction === 'asc' ? 'desc' : 'asc',
+        }
+      }
+
+      return {
+        key,
+        direction: 'asc',
+      }
+    })
+  }
+
+  const sortedCalculations = [...calculations].sort((left, right) => {
+    let comparison = 0
+
+    switch (historySort.key) {
+      case 'id':
+        comparison = left.id - right.id
+        break
+      case 'firstNumber':
+        comparison = left.firstNumber - right.firstNumber
+        break
+      case 'secondNumber':
+        comparison = left.secondNumber - right.secondNumber
+        break
+      case 'result':
+        comparison = left.result - right.result
+        break
+      case 'operation':
+        comparison = left.operation.localeCompare(right.operation)
+        break
+    }
+
+    return historySort.direction === 'asc' ? comparison : -comparison
+  })
+
+  const renderHistorySortButton = (label: string, key: SortKey) => (
+    <button
+      type="button"
+      className={historySort.key === key ? 'sort-button active' : 'sort-button'}
+      onClick={() => handleHistorySort(key)}
+      aria-label={`Sort by ${label}`}
+    >
+      <span>{label}</span>
+      <span className="sort-indicator" aria-hidden="true">
+        {historySort.key === key ? (historySort.direction === 'asc' ? '^' : 'v') : '<>'}
+      </span>
+    </button>
+  )
 
   const formatOperationSelect = (
     selectedOperation: Operation,
@@ -399,11 +471,19 @@ function App() {
           <table>
             <thead>
               <tr>
-                <th>Id</th>
-                <th>First Number</th>
-                <th>Second Number</th>
-                <th>Operand</th>
-                <th>Result</th>
+                <th aria-sort={getSortLabel('id')}>{renderHistorySortButton('Id', 'id')}</th>
+                <th aria-sort={getSortLabel('firstNumber')}>
+                  {renderHistorySortButton('First Number', 'firstNumber')}
+                </th>
+                <th aria-sort={getSortLabel('secondNumber')}>
+                  {renderHistorySortButton('Second Number', 'secondNumber')}
+                </th>
+                <th aria-sort={getSortLabel('operation')}>
+                  {renderHistorySortButton('Operand', 'operation')}
+                </th>
+                <th aria-sort={getSortLabel('result')}>
+                  {renderHistorySortButton('Result', 'result')}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -416,7 +496,7 @@ function App() {
                   <td colSpan={5}>No operations yet.</td>
                 </tr>
               ) : (
-                calculations.map((item) => (
+                sortedCalculations.map((item) => (
                   <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{formatNumber(item.firstNumber)}</td>
