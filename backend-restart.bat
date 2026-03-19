@@ -23,7 +23,7 @@ if /I "%SQLSERVER_USE_WINDOWS_AUTH%"=="true" (
 
   if "%SQLSERVER_PASSWORD%"=="" (
     echo ERROR: SQLSERVER_PASSWORD is not set.
-    echo Set it before starting backend, for example:
+    echo Set it before starting my-react-service, for example:
     echo   set SQLSERVER_PASSWORD=your_password
     echo Or define it in .env file.
     exit /b 1
@@ -35,23 +35,23 @@ if /I "%SQLSERVER_USE_WINDOWS_AUTH%"=="true" (
   )
 )
 
-echo Restarting backend...
+echo Restarting my-react-service...
 call :KillPortOwner 8080
 
-echo Building backend...
-call backend\gradlew.bat -p backend clean bootJar
+echo Building my-react-service...
+call my-react-service\gradlew.bat -p my-react-service clean bootJar
 if %errorlevel% neq 0 (
-  echo Backend build failed.
+  echo my-react-service build failed.
   exit /b %errorlevel%
 )
 
-for %%J in (backend\build\libs\*.jar) do set "APP_JAR=%%~fJ"
+for %%J in (my-react-service\build\libs\*.jar) do set "APP_JAR=%%~fJ"
 if not defined APP_JAR (
-  echo Backend jar not found in backend\build\libs.
+  echo my-react-service jar not found in my-react-service\build\libs.
   exit /b 1
 )
 
-start "backend" cmd /k "java -jar \"%APP_JAR%\""
+start "my-react-service" cmd /k "java -jar \"%APP_JAR%\""
 exit /b
 
 :KillPortOwner

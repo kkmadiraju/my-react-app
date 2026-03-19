@@ -27,3 +27,6 @@ test-results/
 backend/.gradle/
 backend/build/
 backend/target/
+my-react-service/.gradle/
+my-react-service/build/
+my-react-service/target/

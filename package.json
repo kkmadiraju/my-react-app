@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build-backend": "backend\\gradlew.bat -p backend clean build",
+    "build-backend": "my-react-service\\gradlew.bat -p my-react-service clean build",
     "rebuild-all": "npm run build && npm run build-backend",
-    "run-backend-sql": "backend\\gradlew.bat -p backend bootRun",
+    "run-backend-sql": "my-react-service\\gradlew.bat -p my-react-service bootRun",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
