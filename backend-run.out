@@ -1210,3 +1210,329 @@ Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second
 2026-03-19T16:22:23.802+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2026-03-19T16:22:23.808+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@4e5b638b, com.example.calculator.dto.CalculationResp (truncated)...]
 2026-03-19T16:22:23.909+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:22:40.033+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:22:40.035+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:22:40.048+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:22:40.076+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:22:40.078+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@77c5b87c, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:22:40.082+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:06.645+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:06.650+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:06.668+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:06.732+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:06.751+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@5066b7c6, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:23:06.756+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:30.796+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:30.799+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:30.859+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:30.905+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:30.917+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@7ebb762d, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:23:30.922+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:32.250+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:32.252+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:32.259+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:32.310+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:32.312+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@1c0182ea, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:23:32.315+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:32.341+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:32.362+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:32.370+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:32.396+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:32.396+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@2bb1d4e3, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:23:32.400+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:37.337+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:37.347+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:37.378+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:37.429+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:37.449+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@2f755bc8, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:23:37.453+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:42.336+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:42.338+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:42.344+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:42.360+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:42.361+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@ac4924, com.example.calculator.dto.CalculationRespon (truncated)...]
+2026-03-19T16:23:42.367+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:47.340+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:47.341+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:47.348+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:47.360+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:47.362+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@10dfa374, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:23:47.365+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:52.343+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:52.345+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:52.356+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:52.371+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:52.416+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@4505f7e2, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:23:52.423+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:23:57.326+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:23:57.328+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:23:57.334+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:23:57.343+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:23:57.344+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@1e3569d2, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:23:57.348+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:02.328+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:02.330+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:02.338+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:02.367+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:02.368+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@286170d0, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:02.372+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:07.346+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:07.348+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:07.389+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:07.458+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:07.490+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@1c122a03, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:07.495+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:12.339+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:12.341+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:12.347+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:12.361+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:12.363+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@4af353c8, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:12.365+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:17.338+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:17.340+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:17.347+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:17.356+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:17.358+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@4cbc44f9, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:17.361+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:22.339+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:22.341+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:22.355+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:22.376+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:22.378+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@51c7c129, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:22.380+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:27.328+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:27.330+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:27.338+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:27.352+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:27.353+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@690e0166, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:27.357+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:32.328+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:32.330+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:32.336+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:32.351+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:32.352+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@1962c47b, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:32.354+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:37.346+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:37.347+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:37.447+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:37.855+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:37.857+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@1e2aae60, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:37.861+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:42.330+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:42.332+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:42.340+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:42.389+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:42.411+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@5973016a, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:42.414+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:47.348+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:47.350+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:47.360+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:47.389+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:47.390+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@585ca30c, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:47.393+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:52.328+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:52.330+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:52.337+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:52.349+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:52.350+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@30bce4c8, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:52.353+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:24:57.340+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:24:57.342+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:24:57.349+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:24:57.378+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:24:57.379+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@4fa84934, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:24:57.382+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:02.336+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:02.337+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:02.342+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:02.351+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:02.352+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@44e617f1, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:02.354+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:07.336+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:07.337+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:07.346+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:07.401+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:07.406+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@2aac4867, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:07.408+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:12.335+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:12.339+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:12.348+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:12.395+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:12.439+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@6a636f1c, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:12.442+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:17.339+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:17.341+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:17.358+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:17.491+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:17.492+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@2bd44c6b, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:17.497+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:22.420+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:22.421+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:22.469+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:22.679+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:22.680+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@58d9af14, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:22.683+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:27.351+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:27.353+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:27.725+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:28.037+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:28.038+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@3d9789cb, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:28.041+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:32.651+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:32.653+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:32.659+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:32.694+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:32.696+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@1ae32e96, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:32.699+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:37.832+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:37.833+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:37.847+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:37.915+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:37.946+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@34d3dac0, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:37.952+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:25:42.690+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:25:42.691+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:25:42.702+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:25:42.727+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:25:42.735+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@20f5b97d, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:25:42.738+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:05.458+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:05.468+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:06.616+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:10.745+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:10.747+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@2afa24ae, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:26:10.749+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:11.345+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:11.347+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:11.782+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:13.365+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:13.368+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@396c0a33, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:26:13.370+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:14.136+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:14.141+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:14.367+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:14.757+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:14.759+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@7faf45ed, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:26:14.761+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:14.902+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:14.904+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:15.020+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:16.708+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:16.710+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@14c7afff, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:26:16.712+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:19.107+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:19.108+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:19.205+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:28.743+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:28.751+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@4de559c, com.example.calculator.dto.CalculationRespo (truncated)...]
+2026-03-19T16:26:28.754+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:28.785+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:28.789+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:28.907+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:32.170+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:32.171+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@6e4bd703, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:26:32.175+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:32.239+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:32.241+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:32.257+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:35.027+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:35.103+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@54e5d2d8, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:26:35.107+05:30 DEBUG 14668 --- [my-react-service] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:54.776+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:54.781+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:54.807+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:55.101+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:55.102+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@36033594, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:26:55.105+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:26:57.677+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:26:57.678+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:26:57.712+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:26:57.756+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:26:57.758+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@77927c27, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:26:57.761+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:27:02.650+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:27:02.652+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:27:02.686+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:27:03.120+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:27:03.122+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@4b9243a5, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:27:03.125+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:27:07.669+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:27:07.671+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:27:07.700+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:27:07.759+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:27:07.760+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@66827156, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:27:07.763+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:27:13.549+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:27:13.551+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:27:14.362+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:27:15.227+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:27:15.229+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@7ed1463d, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:27:15.231+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:27:23.543+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:27:23.545+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:27:23.947+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:27:24.226+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:27:24.238+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@7b3c6e8d, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:27:24.241+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:27:24.429+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:27:24.431+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:27:24.593+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:27:24.871+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:27:24.873+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@df67dc2, com.example.calculator.dto.CalculationRespo (truncated)...]
+2026-03-19T16:27:24.875+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:27:27.643+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:27:27.646+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:27:28.277+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+2026-03-19T16:27:29.055+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-03-19T16:27:29.056+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[com.example.calculator.dto.CalculationResponse@758138df, com.example.calculator.dto.CalculationResp (truncated)...]
+2026-03-19T16:27:29.059+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-03-19T16:27:32.635+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/operations", parameters={}
+2026-03-19T16:27:32.638+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.calculator.controller.CalculationController#getAll()
+2026-03-19T16:27:32.648+05:30 DEBUG 14668 --- [my-react-service] [nio-8080-exec-9] org.hibernate.SQL                        : select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
+Hibernate: select c1_0.id,c1_0.first_number,c1_0.operand,c1_0.result,c1_0.second_number from operations c1_0
