@@ -11,12 +11,22 @@ type SortConfig = {
   direction: SortDirection
 }
 
+type RuntimeAppConfig = {
+  apiBaseUrl?: string
+}
+
 type CalculationResponse = {
   id: number
   result: number
   firstNumber: number
   secondNumber: number
   operation: string
+}
+
+declare global {
+  interface Window {
+    __APP_CONFIG__?: RuntimeAppConfig
+  }
 }
 
 const operationOptions: { value: Operation; label: string }[] = [
@@ -33,6 +43,13 @@ const operationTitleMap: Record<Operation, string> = {
   multiply: 'Multiply',
   divide: 'Divide',
   mod: 'Mod',
+}
+
+const getApiBaseUrl = () => {
+  const runtimeApiBaseUrl =
+    typeof window !== 'undefined' ? window.__APP_CONFIG__?.apiBaseUrl?.trim() : undefined
+
+  return runtimeApiBaseUrl || import.meta.env.VITE_CALC_API_URL || 'http://localhost:8080'
 }
 
 function App() {
@@ -67,7 +84,7 @@ function App() {
   const [httpUpdateSecond, setHttpUpdateSecond] = useState('')
   const [httpDeleteId, setHttpDeleteId] = useState('')
 
-  const apiBaseUrl = import.meta.env.VITE_CALC_API_URL || 'http://localhost:8080'
+  const apiBaseUrl = getApiBaseUrl()
 
   const loadCalculations = async () => {
     setIsLoadingOperations(true)
