@@ -13,6 +13,12 @@ dist-ssr
 *.local
 playwright-report/
 test-results/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
 
 # Editor directories and files
 .vscode/*
@@ -24,6 +30,10 @@ test-results/
 *.njsproj
 *.sln
 *.sw?
+frontend/node_modules/
+frontend/dist/
+frontend/playwright-report/
+frontend/test-results/
 backend/.gradle/
 backend/build/
 backend/target/

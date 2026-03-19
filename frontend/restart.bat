@@ -2,6 +2,7 @@
 setlocal
 cd /d "%~dp0"
 
+call :LoadEnv "..\.env"
 call :LoadEnv
 if not defined VITE_CALC_API_URL (
   set "VITE_CALC_API_URL=http://localhost:8080"
@@ -29,8 +30,12 @@ powershell -NoProfile -Command "Get-NetTCPConnection -LocalPort %PORT% -ErrorAct
 exit /b
 
 :LoadEnv
-if not exist ".env" (
+set "ENV_FILE=%~1"
+if "%ENV_FILE%"=="" (
+  set "ENV_FILE=.env"
+)
+if not exist "%ENV_FILE%" (
   exit /b
 )
-for /f "usebackq eol=# delims=" %%L in (".env") do set "%%L"
+for /f "usebackq eol=# delims=" %%L in ("%ENV_FILE%") do set "%%L"
 exit /b

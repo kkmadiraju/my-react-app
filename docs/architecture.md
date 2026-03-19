@@ -4,8 +4,8 @@
 
 The system is a two-layer application:
 
-- **Frontend**: React + Vite SPA (`src/`) served from the Vite dev or preview server.
-- **Backend**: Spring Boot API (`my-react-service/`) with REST endpoints.
+- **Frontend**: React + Vite SPA (`frontend/`) served from the Vite dev or preview server.
+- **Backend**: Spring Boot API (`backend/`) with REST endpoints.
 - **Data layer**: Microsoft SQL Server accessed via Spring Data JPA.
 
 ### Runtime topology
@@ -63,14 +63,14 @@ flowchart TB
 ### Build and run path
 
 - Backend:
-  - `my-react-service/build.gradle`
-  - `my-react-service/settings.gradle`
-  - `my-react-service/gradlew.bat`
-  - Spring Boot app at `my-react-service/src/main/java/com/example/calculator/...`
+  - `backend/build.gradle`
+  - `backend/settings.gradle`
+  - `backend/gradlew.bat`
+  - Spring Boot app at `backend/src/main/java/com/example/calculator/...`
 - Frontend:
-  - Vite app at repo root
-  - Entry: `src/main.tsx`
-  - Main view: `src/App.tsx`
+  - Vite app at `frontend/`
+  - Entry: `frontend/src/main.tsx`
+  - Main view: `frontend/src/App.tsx`
 
 ### Environment and ports
 
@@ -95,6 +95,6 @@ flowchart TB
 
 ### Notes
 
-- The codebase also contains local run scripts such as `backend-start.bat` and `frontend-start.bat`.
-- Frontend end-to-end coverage is implemented with Playwright under `tests/e2e/`.
-- Frontend automation runners live under `scripts/`.
+- The codebase now exposes separate project-local run scripts at `backend/start.bat` and `frontend/start.bat`.
+- Frontend end-to-end coverage is implemented with Playwright under `frontend/tests/e2e/`.
+- Frontend automation runners live under `frontend/scripts/`.

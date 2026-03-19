@@ -1,5 +1,5 @@
 flowchart TB
-  User["User Browser"] --> FE["React Frontend\nVite dev server"]
+  User["User Browser"] --> FE["React Frontend\nVite dev server (frontend/)"]
   FE -->|HTTP JSON\nVITE_CALC_API_URL| API["Spring Boot REST API\n/api/operations\nServer port 8080"]
 
   subgraph Frontend

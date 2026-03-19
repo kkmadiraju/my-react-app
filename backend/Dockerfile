@@ -2,13 +2,13 @@ FROM eclipse-temurin:21-jdk-jammy AS build
 
 WORKDIR /app
 
-COPY my-react-service/gradlew ./gradlew
-COPY my-react-service/gradle ./gradle
-COPY my-react-service/build.gradle my-react-service/settings.gradle ./
+COPY gradlew ./gradlew
+COPY gradle ./gradle
+COPY build.gradle settings.gradle ./
 
 RUN chmod +x ./gradlew
 
-COPY my-react-service/src ./src
+COPY src ./src
 
 RUN ./gradlew bootJar --no-daemon
 

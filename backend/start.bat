@@ -2,6 +2,7 @@
 setlocal
 cd /d "%~dp0"
 
+call :LoadEnv "..\.env"
 call :LoadEnv
 if not defined SQLSERVER_USE_WINDOWS_AUTH (
   set "SQLSERVER_USE_WINDOWS_AUTH=false"
@@ -23,7 +24,7 @@ if /I "%SQLSERVER_USE_WINDOWS_AUTH%"=="true" (
 
   if "%SQLSERVER_PASSWORD%"=="" (
     echo ERROR: SQLSERVER_PASSWORD is not set.
-    echo Set it before starting my-react-service, for example:
+    echo Set it before starting the backend, for example:
     echo   set SQLSERVER_PASSWORD=your_password
     echo Or define it in .env file.
     exit /b 1
@@ -38,27 +39,31 @@ if /I "%SQLSERVER_USE_WINDOWS_AUTH%"=="true" (
 echo Stopping any process on port 8080...
 powershell -NoProfile -Command "Get-NetTCPConnection -LocalPort 8080 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess | Sort-Object -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }"
 
-echo Building my-react-service...
-call my-react-service\gradlew.bat -p my-react-service clean bootJar
+echo Building backend...
+call gradlew.bat clean bootJar
 if %errorlevel% neq 0 (
-  echo my-react-service build failed.
+  echo Backend build failed.
   exit /b %errorlevel%
 )
 
-for %%J in (my-react-service\build\libs\*.jar) do set "APP_JAR=%%~fJ"
+for %%J in (build\libs\*.jar) do set "APP_JAR=%%~fJ"
 if not defined APP_JAR (
-  echo my-react-service jar not found in my-react-service\build\libs.
+  echo Backend jar not found in build\libs.
   exit /b 1
 )
 
-start "my-react-service" cmd /k "java -jar \"%APP_JAR%\""
+start "backend" cmd /k "java -jar \"%APP_JAR%\""
 exit /b
 
 :LoadEnv
-if not exist ".env" (
+set "ENV_FILE=%~1"
+if "%ENV_FILE%"=="" (
+  set "ENV_FILE=.env"
+)
+if not exist "%ENV_FILE%" (
   exit /b
 )
-for /f "usebackq eol=# delims=" %%L in (".env") do set "%%L"
+for /f "usebackq eol=# delims=" %%L in ("%ENV_FILE%") do set "%%L"
 exit /b
 
 :PromptPassword
